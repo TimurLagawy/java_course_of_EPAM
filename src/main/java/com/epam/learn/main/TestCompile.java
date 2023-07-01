@@ -2,9 +2,9 @@ package com.epam.learn.main;
 
 public class TestCompile {
     public static void main(String[] argv){
-        long x = 5;
-        long y = 2;
-        byte b = (byte) ((byte) x / y);
-        System.out.println(b);
+        int i = 1;
+        int j = 2;
+        if (i==1|| j==2)
+        System.out.println("OK");
     }
 }
