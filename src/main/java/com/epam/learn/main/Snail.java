@@ -11,7 +11,7 @@ public class Snail {
         Scanner scannerH = new Scanner (System.in);
         int h = scannerH.nextInt();
 
-        for (int i = 0; i <= 15 ; i++) {
+        for (int i = 1; i <= 15 ; i++) {
             int h1 = a * i;
             h1 = (h1 - (b * (i - 1)));
             if (h1 >= h) {
