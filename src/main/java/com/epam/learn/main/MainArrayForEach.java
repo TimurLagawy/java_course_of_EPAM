@@ -33,7 +33,7 @@ public class MainArrayForEach {
                 max = value;
             }
         }
-       // System.out.println(max); - вывод мах значения
+       // System.out.println(max);// - вывод мах значения
         for (int i = 0; i < array.length; i++) {
             if(array[i] < 0){
                 array[i]=max;
