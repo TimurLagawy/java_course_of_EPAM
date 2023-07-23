@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class LocalMaximaRemove {
     public static void main(String[] args) {
-        int[] array = {-18, 21, 3, 6, 7, 65};
+        int[] array = {18, 1, 3, 6, 7, -5};
 //        int searchMax=0;
 //        for (int i = 0; i < intArray.length; i++) {
 //            if(i == 0 && intArray[i]>intArray[i+1]){
@@ -61,22 +61,15 @@ public class LocalMaximaRemove {
 
         int[] result = new int[array.length];
         int resultIndex = 0;
-        for (int k = 0; k < array.length; k++) {
-            if (k == 0 && array[k] <= array[k+1]){
-                result[resultIndex] = array[k];
-                resultIndex++;
-            } else if (k == array.length-1 && array[k] <= array[k-1]) {
-                result[resultIndex] = array[k];
-                resultIndex++;
-            } else if(
-                     k>0 || k< array.length-1 || array[k] <= array[k-1] || array[k] <= array[k+1]) {
+       for (int k = 0; k < array.length; k++) {
+            if ( k == 0 && array[k] > array[k + 1]
+                    || k == array.length-1 && array[k] > array[k - 1]
+                    || k>=1 && array[k] > array[k - 1] && array[k] > array[k + 1]){
+                System.out.print(k);
 
-                result[resultIndex] = array[k];
+            }else{result[resultIndex] = array[k];
                 resultIndex++;
-//{-18, 21, 3, 6, 7, 65}
-
-
             }
         }
-        return  Arrays.copyOf(array, resultIndex);
+        return  Arrays.copyOf(result, resultIndex);
     }}
