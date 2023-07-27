@@ -49,12 +49,14 @@ public class Test {
             b--;
         }System.out.println(Arrays.deepToString(snake));
         System.out.println(b + " " + a);
-        for (int i = h*2+k*2-3; i < h*3+k*2-4 ; i++) {
+        for (int i = h*2+k*2-3; i < h*3+k*2-5 ; i++) {
             snake[b][a+1] = i;
             a++;
         }
         System.out.println(Arrays.deepToString(snake));
         System.out.println(b + " " + a);
 
+
+        Arrays.stream(snake).map(Arrays::toString).forEach(System.out::println);
     }
 }
