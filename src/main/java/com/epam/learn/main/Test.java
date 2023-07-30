@@ -56,7 +56,6 @@ public class Test {
         System.out.println(Arrays.deepToString(snake));
         System.out.println(b + " " + a);
 
-
         Arrays.stream(snake).map(Arrays::toString).forEach(System.out::println);
     }
 }
