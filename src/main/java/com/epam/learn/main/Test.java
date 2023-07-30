@@ -53,8 +53,8 @@ public class Test {
             snake[b][a+1] = i;
             a++;
         }
-        System.out.println(Arrays.deepToString(snake));
-        System.out.println(b + " " + a);
+        //System.out.println(Arrays.deepToString(snake));
+        //System.out.println(b + " " + a);
 
         Arrays.stream(snake).map(Arrays::toString).forEach(System.out::println);
     }

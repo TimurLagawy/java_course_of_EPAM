@@ -22,12 +22,17 @@ public class MainArray {
         for (int valueInt : arrayInt) {
             System.out.println(valueInt);//вывод каждого элемента массива
         }*/
-        int[]  arrayInt = { 1, 2, 3, 4, 5, 6 };
+        /*int[]  arrayInt = { 1, 2, 3, 4, 5, 6 };
         for (int element : arrayInt) {
             element *=  element;
         }
         for (int valueInt : arrayInt) {
             System.out.println(valueInt);
+        }*/
+        int [] arr = {1, 2, 3};
+        int n = arr.length;
+        for (int i = 1; i <= (n-1); i++) {
+
         }
     }
 }
