@@ -9,7 +9,7 @@ public class Spiral {
         int leftCol = 0;
         int rightCol = columns - 1;
 
-        for (int j = 0; j < rows*columns - 1; j++) {
+        for (int j = 0; j < rows*columns; j++) {
             if (value <= rows * columns){
             for (int i = leftCol; i <= rightCol; i++) {
                 result[topRow][i] = value++;
@@ -41,7 +41,7 @@ public class Spiral {
 
     public static void main(String[] args) {
         {
-            int[][] spiral = Spiral.spiral(1, 2);
+            int[][] spiral = Spiral.spiral(1, 1);
 
             for (int i = 0; i < spiral.length; i++) {
                 for (int j = 0; j < spiral[i].length; j++) {
