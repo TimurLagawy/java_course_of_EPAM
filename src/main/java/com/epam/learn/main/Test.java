@@ -29,30 +29,38 @@ public class Test {
         int rightColumn = h - 1;
         int bottomRow = k - 1;
         int lefColumn = 0;
-       while (elem <= h * k) {
-           for (int i = lefColumn; i <= rightColumn; i++) {
-               snake[topRow][i] = elem;
-               elem++;
+       for (int j = 0; j < k*h-1; j++) {
+           if (elem <= k*h) {
+               for (int i = lefColumn; i <= rightColumn; i++) {
+                   snake[topRow][i] = elem;
+                   elem++;
+               }
+               topRow++;
            }
-           topRow++;
            System.out.println(elem);
-           for (int i = topRow; i <= bottomRow; i++) {
-               snake[i][rightColumn] = elem;
-               elem++;
+           if (elem <= k*h) {
+               for (int i = topRow; i <= bottomRow; i++) {
+                   snake[i][rightColumn] = elem;
+                   elem++;
+               }
+               rightColumn--;
            }
-           rightColumn--;
            System.out.println(elem);
-           for (int i = rightColumn; i >= lefColumn; i--) {
-               snake[bottomRow][i] = elem;
-               elem++;
+           if (elem <= k*h) {
+               for (int i = rightColumn; i >= lefColumn; i--) {
+                   snake[bottomRow][i] = elem;
+                   elem++;
+               }
+               bottomRow--;
            }
-           bottomRow--;
            System.out.println(elem);
-           for (int i = bottomRow; i >= topRow; i--) {
-               snake[i][lefColumn] = elem;
-               elem++;
+           if (elem <= k*h) {
+               for (int i = bottomRow; i >= topRow; i--) {
+                   snake[i][lefColumn] = elem;
+                   elem++;
+               }
+               lefColumn++;
            }
-           lefColumn++;
        }
 
         Arrays.stream(snake).map(Arrays::toString).forEach(System.out::println);

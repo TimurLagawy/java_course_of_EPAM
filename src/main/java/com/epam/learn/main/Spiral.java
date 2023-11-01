@@ -4,45 +4,81 @@ public class Spiral {
     public static int[][] spiral(int rows, int columns) {
         int[][] result = new int[rows][columns];
         int value = 1;
-        int topRow = 0, bottomRow = rows - 1, leftCol = 0, rightCol = columns - 1;
+        int topRow = 0;
+        int bottomRow = rows - 1;
+        int leftCol = 0;
+        int rightCol = columns - 1;
 
-        while (value <= rows * columns) {
-            // Traverse top row
+        for (int j = 0; j < rows*columns - 1; j++) {
+            if (value <= rows * columns){
             for (int i = leftCol; i <= rightCol; i++) {
                 result[topRow][i] = value++;
             }
             topRow++;
-
-            // Traverse right column
-            for (int i = topRow; i <= bottomRow; i++) {
-                result[i][rightCol] = value++;
             }
-            rightCol--;
-
-            // Traverse bottom row
-            for (int i = rightCol; i >= leftCol; i--) {
-                result[bottomRow][i] = value++;
+            if (value <= rows * columns) {
+                for (int i = topRow; i <= bottomRow; i++) {
+                    result[i][rightCol] = value++;
+                }
+                rightCol--;
             }
-            bottomRow--;
-
-            // Traverse left column
-            for (int i = bottomRow; i >= topRow; i--) {
-                result[i][leftCol] = value++;
+            if (value <= rows * columns) {
+                for (int i = rightCol; i >= leftCol; i--) {
+                    result[bottomRow][i] = value++;
+                }
+                bottomRow--;
             }
-            leftCol++;
+            if (value <= rows * columns) {
+                for (int i = bottomRow; i >= topRow; i--) {
+                    result[i][leftCol] = value++;
+                }
+                leftCol++;
+            }
         }
 
         return result;
     }
 
     public static void main(String[] args) {
-        int[][] spiral = Spiral.spiral(5, 6);
+        {
+            int[][] spiral = Spiral.spiral(1, 2);
 
-        for (int i = 0; i < spiral.length; i++) {
-            for (int j = 0; j < spiral[i].length; j++) {
-                System.out.print(String.format("%4s", spiral[i][j]));
+            for (int i = 0; i < spiral.length; i++) {
+                for (int j = 0; j < spiral[i].length; j++) {
+                    System.out.print(String.format("%4s", spiral[i][j]));
+                }
+                System.out.println();
             }
-            System.out.println();
+        }
+        {
+            int[][] spiral = Spiral.spiral(3, 4);
+
+            for (int i = 0; i < spiral.length; i++) {
+                for (int j = 0; j < spiral[i].length; j++) {
+                    System.out.print(String.format("%4s", spiral[i][j]));
+                }
+                System.out.println();
+            }
+        }
+        {
+            int[][] spiral = Spiral.spiral(5, 6);
+
+            for (int i = 0; i < spiral.length; i++) {
+                for (int j = 0; j < spiral[i].length; j++) {
+                    System.out.print(String.format("%4s", spiral[i][j]));
+                }
+                System.out.println();
+            }
+        }
+        {
+            int[][] spiral = Spiral.spiral(5, 5);
+
+            for (int i = 0; i < spiral.length; i++) {
+                for (int j = 0; j < spiral[i].length; j++) {
+                    System.out.print(String.format("%4s", spiral[i][j]));
+                }
+                System.out.println();
+            }
         }
     }
 }
