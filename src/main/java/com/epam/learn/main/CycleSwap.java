@@ -100,4 +100,8 @@ public class CycleSwap {
                 }
             }
         }*/
+    public static void main(String[] args) {
+
+    }double doThat (int i1, int i2) {return 1.4; };
+
 }
